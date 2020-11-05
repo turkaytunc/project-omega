@@ -1,1 +1,1 @@
-# etiya-project
+# Etiya-project
