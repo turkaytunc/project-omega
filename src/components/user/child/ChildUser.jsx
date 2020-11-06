@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import './child-user.scss';
 import { findLocalParentById } from '../../../local-data/findLocalParentById';
 import { UserContext } from '../../../context/UserContext';
@@ -16,14 +16,21 @@ export const ChildUser = ({ userId, userName }) => {
 
   const handleClick = () => {
     setIsChildContainerOpen((prev) => !prev);
-
-    const newIds = [...new Set([...state.userIds, userId])];
-
-    updateState({
-      ...state,
-      userIds: [...newIds],
-    });
   };
+
+  useEffect(() => {
+    if (isChildContainerOpen) {
+      updateState({
+        ...state,
+        activeUserIds: [...new Set([...state.activeUserIds, userId])],
+      });
+    } else {
+      const filteredActiveUserIds = state.activeUserIds.filter(
+        (e) => e !== userId
+      );
+      updateState({ ...state, activeUserIds: [...filteredActiveUserIds] });
+    }
+  }, [isChildContainerOpen]);
 
   return (
     <div>

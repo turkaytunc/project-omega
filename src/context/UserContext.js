@@ -1,9 +1,12 @@
-import React, { useState, createContext, useEffect } from 'react';
+import React, { useState, createContext } from 'react';
 
 const UserContext = createContext(null);
 
 const UserProvider = ({ children }) => {
-  const [state, setState] = useState({ userIds: [] });
+  const [state, setState] = useState({
+    activeUserIds: [],
+    posts: [{ userId: '', postId: '', title: '', body: '' }],
+  });
 
   return (
     <UserContext.Provider

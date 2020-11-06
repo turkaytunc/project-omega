@@ -6,7 +6,7 @@ import { UserContext } from '../../context/UserContext';
 
 const UserMenuContainer = () => {
   const { state } = useContext(UserContext);
-  console.log(state);
+
   return (
     <section className="user-menu-container">
       {findLocalParentById(null).map((e) => (
