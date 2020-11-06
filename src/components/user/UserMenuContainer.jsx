@@ -1,5 +1,5 @@
 import React from 'react';
-import { UserButton } from './menu/UserButton';
+import { ChildUser } from './child/ChildUser';
 import { findLocalParentById } from '../../local-data/findLocalParentById';
 import './user-menu-container.scss';
 
@@ -7,7 +7,7 @@ const UserMenuContainer = () => {
   return (
     <section className="user-menu-container">
       {findLocalParentById(null).map((e) => (
-        <UserButton key={e.id} userId={e.id} userName={e.name}></UserButton>
+        <ChildUser key={e.id} userId={e.id} userName={e.name}></ChildUser>
       ))}
     </section>
   );
