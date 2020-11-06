@@ -3,7 +3,7 @@ import './child-user.scss';
 import { findLocalParentById } from '../../../local-data/findLocalParentById';
 
 export const ChildUser = ({ userId, userName }) => {
-  const [hasChild, setHasChild] = useState(false);
+  const [isChildContainerOpen, setIsChildContainerOpen] = useState(false);
 
   const renderChildren = () =>
     findLocalParentById(userId).map((e) => (
@@ -13,7 +13,7 @@ export const ChildUser = ({ userId, userName }) => {
     ));
 
   const handleClick = () => {
-    setHasChild((prev) => !prev);
+    setIsChildContainerOpen((prev) => !prev);
   };
 
   return (
@@ -22,7 +22,7 @@ export const ChildUser = ({ userId, userName }) => {
         id: {userId}, name: {userName}
       </div>
 
-      {hasChild ? renderChildren() : null}
+      {isChildContainerOpen ? renderChildren() : null}
     </div>
   );
 };

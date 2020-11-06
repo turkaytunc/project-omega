@@ -1,7 +1,27 @@
 import './post.scss';
 
-import React from 'react';
+import React, { useState } from 'react';
 
 export const Post = ({ n }) => {
-  return <div>This is post number {n}</div>;
+  const [isMouseOver, setIsMouseOver] = useState(false);
+
+  const renderHoverMenu = () => {
+    return (
+      <div className="hover-menu">
+        <div>detail</div>
+        <div>edit</div>
+        <div>remove</div>
+      </div>
+    );
+  };
+
+  return (
+    <div
+      onMouseEnter={() => setIsMouseOver(true)}
+      onMouseLeave={() => setIsMouseOver(false)}
+    >
+      <div>This is post number {n}</div>
+      {isMouseOver ? renderHoverMenu() : null}
+    </div>
+  );
 };
