@@ -1,11 +1,20 @@
 import './posts.scss';
 import { Post } from '../post/Post';
+import { UserContext } from '../../context/UserContext';
+import { useContext } from 'react';
 
 export const Posts = () => {
-  const mockPost = [];
-  for (let i = 0; i < 10; i++) {
-    mockPost.push(<Post key={i} n={i} />);
-  }
+  const { state } = useContext(UserContext);
 
-  return <div className="posts-container">{mockPost.map((e) => e)}</div>;
+  //console.log(stateItem);
+
+  const posts = state.posts
+    .map((e) => e)
+    .map((e) => (
+      <ul>
+        <Post n={e}></Post>
+      </ul>
+    ));
+
+  return <div className="posts-container">{posts}</div>;
 };

@@ -5,7 +5,7 @@ const UserContext = createContext(null);
 const UserProvider = ({ children }) => {
   const [state, setState] = useState({
     activeUserIds: [],
-    posts: [{ userId: '', postId: '', title: '', body: '' }],
+    posts: [],
   });
 
   return (
