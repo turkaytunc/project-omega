@@ -17,6 +17,7 @@ export const Post = ({ n }) => {
 
   return (
     <div
+      className="post-container"
       onMouseEnter={() => setIsMouseOver(true)}
       onMouseLeave={() => setIsMouseOver(false)}
     >

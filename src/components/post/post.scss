@@ -1,5 +1,11 @@
+.post-container {
+  padding: 2em 0.5em;
+  position: relative;
+}
+
 .hover-menu {
   display: flex;
+  position: absolute;
   div {
     margin-left: 1em;
   }
