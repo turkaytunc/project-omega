@@ -8,9 +8,9 @@ export const Post = ({ n }) => {
   const renderHoverMenu = () => {
     return (
       <div className="hover-menu">
-        <div>detail</div>
-        <div>edit</div>
-        <div>remove</div>
+        <div>DETAIL</div>
+        <div>EDIT</div>
+        <div>REMOVE</div>
       </div>
     );
   };
