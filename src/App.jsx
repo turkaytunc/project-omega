@@ -1,13 +1,14 @@
 import './app.scss';
-import { UserMenu } from './components/user-menu/UserMenu';
+import { Posts } from './components/posts/Posts';
+import UserMenuContainer from './components/user/UserMenuContainer';
 import { UserProvider } from './context/UserContext';
 
 function App() {
   return (
     <UserProvider>
       <div className="app">
-        Hello Etiya
-        <UserMenu />
+        <UserMenuContainer />
+        <Posts />
       </div>
     </UserProvider>
   );

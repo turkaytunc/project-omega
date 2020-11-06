@@ -1,6 +1,11 @@
 import './posts.scss';
-import React from 'react';
+import { Post } from '../post/Post';
 
 export const Posts = () => {
-  return <div></div>;
+  const mockPost = [];
+  for (let i = 0; i < 10; i++) {
+    mockPost.push(<Post n={i} />);
+  }
+
+  return <div className="posts-container">{mockPost.map((e) => e)}</div>;
 };
