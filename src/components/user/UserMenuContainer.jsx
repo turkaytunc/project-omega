@@ -1,16 +1,14 @@
 import React from 'react';
-import UserMenu from './menu/UserMenu';
-import { renderUser } from '../../local-data/renderUser';
+import { UserButton } from './menu/UserButton';
+import { findLocalParentById } from '../../local-data/findLocalParentById';
 import './user-menu-container.scss';
 
 const UserMenuContainer = () => {
   return (
     <section className="user-menu-container">
-      {renderUser(null)
-        ? renderUser(null).map((e) => {
-            return <UserMenu id={e.id} root={e} />;
-          })
-        : null}
+      {findLocalParentById(null).map((e) => (
+        <UserButton key={e.id} userId={e.id} userName={e.name}></UserButton>
+      ))}
     </section>
   );
 };
