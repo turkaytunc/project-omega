@@ -1,0 +1,28 @@
+language: node_js
+os: linux
+dist: xenial
+
+node_js:
+  - 'stable'
+cache:
+  directories:
+    - node_modules
+branches:
+  except:
+    - development
+  only:
+    - main
+script:
+  - npm install -g codecov
+  - npm test -- --clearCache
+  - npm test -- --coverage
+  - CI=false npm run build
+after_script:
+  - CODECOV_TOKEN=$CODECOV_TOKEN codecov
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: build
+  on:
+    branch: main
