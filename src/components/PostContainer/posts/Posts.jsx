@@ -39,7 +39,7 @@ export const Posts = () => {
 
   return (
     <div className="posts-container">
-      <button onClick={() => handlePopulate()}>Hllo</button>
+      <button onClick={() => handlePopulate()}>Hello</button>
       <input
         className="search-box"
         type="search"
