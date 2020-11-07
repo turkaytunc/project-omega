@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import { SinglePost } from '../components/PostContainer/single-post/SinglePost';
 
 const mockPost = {
@@ -20,5 +20,17 @@ describe('Render react component', () => {
   it('should render This is a test string!', () => {
     render(<SinglePost post={mockPost} />);
     expect(screen.getByText(/This is a test string!/)).toBeInTheDocument();
+  });
+});
+
+describe('Check mouse events', () => {
+  test('should simulate mouse enter', () => {
+    const { getByRole } = render(<SinglePost post={mockPost} />);
+    fireEvent.mouseEnter(getByRole('list'));
+  });
+
+  test('should simulate mouse leave', () => {
+    const { getByRole } = render(<SinglePost post={mockPost} />);
+    fireEvent.mouseLeave(getByRole('list'));
   });
 });
