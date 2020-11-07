@@ -1,0 +1,17 @@
+.hover-menu-container {
+  position: absolute;
+
+  right: 0;
+  bottom: -2em;
+  height: 1.5em;
+  width: fit-content;
+
+  ul {
+    display: flex;
+    font-size: 1.5em;
+    align-items: center;
+    li {
+      margin-left: 0.5em;
+    }
+  }
+}

@@ -1,21 +1,22 @@
 import React, { useContext, useEffect, useState } from 'react';
 import './child-user.scss';
-import { findLocalParentById } from '../../../local-data/findLocalParentById';
-import { UserContext } from '../../../context/UserContext';
-import { SubChild } from './sub-child/SubChild';
+import { GlobalState } from '../../../context/GlobalContext';
 
-export const ChildUser = ({ userId, userName }) => {
-  const { state, updateState } = useContext(UserContext);
+export const ChildUser = ({ parentId, userName }) => {
+  const [isActive, setIsActive] = useState(false);
+  const { state, updateState } = useContext(GlobalState);
 
-  const handleClick = (e, id) => {
-    const divId = document.getElementById(`${id}`);
-  };
+  useEffect(() => {
+    updateState({ id: parentId });
+  }, [isActive]);
+
   return (
-    <div onClick={(e) => handleClick(e, userId)}>
-      id: {userId}, name: {userName}
-      {findLocalParentById(userId).map((e) => (
-        <SubChild userId={e.id} key={e.id} userName={e.name}></SubChild>
-      ))}
+    <div
+      className="child-user-container"
+      id={parentId}
+      onClick={() => setIsActive(!isActive)}
+    >
+      {userName}
     </div>
   );
 };

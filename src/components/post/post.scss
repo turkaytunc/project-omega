@@ -1,23 +1,11 @@
 .post-container {
-  padding: 2em 0.5em;
+  padding: 2.5em 0.5em;
+  margin-top: 1em;
+  background-color: aquamarine;
+  border-radius: 10px;
 }
 
 .post-ul {
   position: relative;
-}
-
-.hover-menu {
-  display: flex;
-  position: absolute;
-  font-size: 1.5em;
-  div {
-    margin-left: 1em;
-  }
-
-  align-items: center;
-
-  right: 0;
-  bottom: 0;
-  height: 1.5em;
-  width: fit-content;
+  list-style: none;
 }
