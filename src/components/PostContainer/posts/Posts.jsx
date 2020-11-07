@@ -6,12 +6,11 @@ import { GlobalState } from '../../../context/GlobalContext';
 import { PostState } from '../../../context/PostContext';
 
 export const Posts = () => {
-  const [search, setSearch] = useState('');
   const { state } = useContext(GlobalState);
-
-  const [posts, setPosts] = useState([]);
-
   const { postState, updatePostState } = useContext(PostState);
+
+  const [search, setSearch] = useState('');
+  const [posts, setPosts] = useState([]);
 
   const hasPostInPostState = (idToFind) =>
     postState.some((e) => e.id === idToFind);
