@@ -1,7 +1,19 @@
+$hover-color: rgb(56, 173, 194);
+$child-bg-color: rgb(29, 110, 124);
+
 .child-user-container {
-  background-color: green;
+  background-color: $child-bg-color;
   border: 1px solid black;
   color: white;
   padding: 0.2em;
   margin: 0.2em;
+  width: 100%;
+  border-radius: 10px;
+  padding-left: 1em;
+
+  &:hover {
+    background-color: $hover-color;
+    color: #222;
+    cursor: pointer;
+  }
 }

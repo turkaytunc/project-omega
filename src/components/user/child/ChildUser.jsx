@@ -7,7 +7,7 @@ export const ChildUser = ({ parentId, userName }) => {
   const { state, updateState } = useContext(GlobalState);
 
   useEffect(() => {
-    updateState({ id: parentId });
+    updateState(parentId);
   }, [isActive]);
 
   return (
