@@ -23,7 +23,8 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "testAll": "react-scripts test --coverage --watchAll"
+    "testAll": "react-scripts test --coverage --watchAll",
+    "commit": "sh commit.sh"
   },
   "eslintConfig": {
     "extends": [
