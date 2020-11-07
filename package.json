@@ -1,5 +1,6 @@
 {
-  "name": "etiya-project",
+  "name": "project-omega",
+  "homepage": "https://turkaytunc.github.io/project-omega/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -20,6 +21,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "testAll": "react-scripts test --coverage --watchAll"
   },
   "eslintConfig": {
