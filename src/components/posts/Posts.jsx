@@ -1,20 +1,20 @@
 import './posts.scss';
 import { Post } from '../post/Post';
-import { UserContext } from '../../context/UserContext';
-import { useContext } from 'react';
+import { getPosts } from '../../http/getPosts';
+import { useState, useEffect } from 'react';
 
 export const Posts = () => {
-  const { state } = useContext(UserContext);
+  const [posts, setPosts] = useState([]);
 
-  //console.log(stateItem);
+  useEffect(() => {
+    getPosts().then((e) => setPosts(e));
+  }, []);
 
-  const posts = state.posts
-    .map((e) => e)
-    .map((e) => (
-      <ul>
-        <Post n={e}></Post>
-      </ul>
-    ));
-
-  return <div className="posts-container">{posts}</div>;
+  return (
+    <div className="posts-container">
+      {posts.map((e) => (
+        <Post post={e} />
+      ))}
+    </div>
+  );
 };
