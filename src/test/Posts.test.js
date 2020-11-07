@@ -1,4 +1,4 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import { Posts } from '../components/PostContainer/posts/Posts';
 import React from 'react';
 
