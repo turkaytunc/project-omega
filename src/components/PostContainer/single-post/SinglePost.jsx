@@ -1,5 +1,6 @@
 import { HoverMenu } from '../hover-menu/HoverMenu';
 import { useState } from 'react';
+import './single-post.scss';
 
 export const SinglePost = ({ post }) => {
   const [isMouseOver, setIsMouseOver] = useState(false);

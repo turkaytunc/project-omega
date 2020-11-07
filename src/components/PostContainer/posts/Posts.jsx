@@ -1,13 +1,13 @@
 import './posts.scss';
 import { Post } from '../post/Post';
-import { getPostByUserId } from '../../http/getPostByUserId';
+import { getPostByUserId } from '../../../http/getPostByUserId';
 import { useState, useEffect, useContext } from 'react';
-import { GlobalState } from '../../context/GlobalContext';
-import { PostState } from '../../context/PostContext';
+import { GlobalState } from '../../../context/GlobalContext';
+import { PostState } from '../../../context/PostContext';
 
 export const Posts = () => {
   const [search, setSearch] = useState('');
-  const { state, updateGlobalState } = useContext(GlobalState);
+  const { state } = useContext(GlobalState);
 
   const [posts, setPosts] = useState([]);
 
@@ -30,9 +30,9 @@ export const Posts = () => {
     populatePosts(state);
   };
 
-  // useEffect(() => {
-  //   posts.map((e) => console.log(e));
-  // }, [gState]);
+  useEffect(() => {
+    populatePosts(state);
+  }, [state]);
 
   const handleInput = (e) => {
     setSearch(e.target.value);

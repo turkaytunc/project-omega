@@ -1,5 +1,5 @@
 import './app.scss';
-import { Posts } from './components/posts/Posts';
+import { Posts } from './components/PostContainer/posts/Posts';
 import UserMenuContainer from './components/user/UserMenuContainer';
 import { GlobalStateProvider } from './context/GlobalContext';
 import { PostStateProvider } from './context/PostContext';
