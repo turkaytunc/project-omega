@@ -7,16 +7,18 @@ const mockPost = {
   body: 'This is a test string!',
 };
 
-it('renders without crash', () => {
-  render(<SinglePost post={mockPost} />);
-});
+describe('Render react component', () => {
+  it('renders without crash', () => {
+    render(<SinglePost post={mockPost} />);
+  });
 
-it('should render Mock title', () => {
-  render(<SinglePost post={mockPost} />);
-  expect(screen.getByText(/Mock title/)).toBeInTheDocument();
-});
+  it('should render Mock title', () => {
+    render(<SinglePost post={mockPost} />);
+    expect(screen.getByText(/Mock title/)).toBeInTheDocument();
+  });
 
-it('should render This is a test string!', () => {
-  render(<SinglePost post={mockPost} />);
-  expect(screen.getByText(/This is a test string!/)).toBeInTheDocument();
+  it('should render This is a test string!', () => {
+    render(<SinglePost post={mockPost} />);
+    expect(screen.getByText(/This is a test string!/)).toBeInTheDocument();
+  });
 });
