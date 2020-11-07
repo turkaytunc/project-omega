@@ -1,12 +1,11 @@
 import { render, screen } from '@testing-library/react';
 import App from '../App';
 
-it('renders without crash', () => {
+test('renders without crash', () => {
   render(<App />);
 });
 
 test('renders Leanne link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/Leanne Graham/i);
-  expect(linkElement).toBeInTheDocument();
+  const { container } = render(<App />);
+  expect(container.textContent).toMatch(/Get Posts/gi);
 });
