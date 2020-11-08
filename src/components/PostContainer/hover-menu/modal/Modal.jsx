@@ -18,10 +18,7 @@ export const Modal = ({ children }) => {
   return (
     <div className="modal">
       {children}
-      <button
-        style={{ marginTop: '50%', marginLeft: '90%' }}
-        onClick={() => handleDetails()}
-      >
+      <button className="close-button" onClick={() => handleDetails()}>
         Close
       </button>
       <div className="modal-container">
