@@ -1,5 +1,5 @@
 import { HoverMenu } from '../hover-menu/HoverMenu';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './single-post.scss';
 
 export const SinglePost = ({ post }) => {

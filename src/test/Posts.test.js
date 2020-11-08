@@ -4,13 +4,16 @@ import React from 'react';
 
 import { GlobalStateProvider } from '../context/GlobalContext';
 import { PostStateProvider } from '../context/PostContext';
+import { RemovePostContextProvider } from '../context/RemovePostContext';
 
 describe('Component rendering tests', () => {
   test('should render without crash', () => {
     render(
       <GlobalStateProvider value={null}>
         <PostStateProvider>
-          <Posts />
+          <RemovePostContextProvider>
+            <Posts />
+          </RemovePostContextProvider>
         </PostStateProvider>
       </GlobalStateProvider>
     );
@@ -20,7 +23,9 @@ describe('Component rendering tests', () => {
     const { getByRole } = render(
       <GlobalStateProvider value={null}>
         <PostStateProvider>
-          <Posts />
+          <RemovePostContextProvider>
+            <Posts />
+          </RemovePostContextProvider>
         </PostStateProvider>
       </GlobalStateProvider>
     );

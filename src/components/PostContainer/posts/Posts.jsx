@@ -1,14 +1,19 @@
 import './posts.scss';
 import { Post } from '../post/Post';
 import { getPostByUserId } from '../../../http/getPostByUserId';
+import { removePostByPostIds } from '../../../http/removePostByPostIds';
 import { useState, useEffect, useContext, useCallback } from 'react';
 import { GlobalState } from '../../../context/GlobalContext';
 import { PostState } from '../../../context/PostContext';
+import { RemovePostContext } from '../../../context/RemovePostContext';
 
 export const Posts = () => {
   // Global states
   const { state } = useContext(GlobalState);
   const { postState, updatePostState } = useContext(PostState);
+  const { removePostContext, updateRemovePostContext } = useContext(
+    RemovePostContext
+  );
 
   // Local states
 
@@ -39,8 +44,11 @@ export const Posts = () => {
     populatePosts(state);
   }, [state, postState, populatePosts]);
 
-  const handlePopulate = () => {
-    populatePosts(state);
+  const handleRemove = () => {
+    removePostByPostIds(removePostContext)
+      .then((e) => console.log(`removed post by ids: ${removePostContext}`))
+      .catch((e) => console.log(e));
+    updateRemovePostContext([]);
   };
 
   return (
@@ -48,7 +56,7 @@ export const Posts = () => {
       {posts.map((e, i) => (
         <Post key={i} post={e} />
       ))}
-      <button className="save-button" onClick={() => handlePopulate()}>
+      <button className="save-button" onClick={() => handleRemove()}>
         Save
       </button>
     </div>
