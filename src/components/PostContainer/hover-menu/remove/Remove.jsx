@@ -10,5 +10,9 @@ export const Remove = ({ postId }) => {
     }
   };
 
-  return <div onClick={() => confirmFunc()}>Remove</div>;
+  return (
+    <div style={{ cursor: 'pointer' }} onClick={() => confirmFunc()}>
+      Remove
+    </div>
+  );
 };
