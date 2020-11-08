@@ -18,14 +18,14 @@ export const Modal = ({ children }) => {
   return (
     <div className="modal">
       {children}
-      <button className="close-button" onClick={() => handleDetails()}>
-        Close
-      </button>
       <div className="modal-container">
         <ul>
           <li>{modalStateContext.title}</li>
           <li>{modalStateContext.id}</li>
           <li>{modalStateContext.body}</li>
+          <button className="close-button" onClick={() => handleDetails()}>
+            Close
+          </button>
         </ul>
       </div>
     </div>

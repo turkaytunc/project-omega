@@ -13,18 +13,25 @@
   width: 100%;
   ul {
     background-color: orangered;
-    position: absolute;
-    margin: 0em 5em;
+    position: relative;
+    margin: 1em;
     padding: 5em 1em;
     border-radius: 1em;
-    min-width: 70vw;
+    min-width: 80vw;
     top: 20vh;
   }
 }
 
 .close-button {
-  position: fixed;
-  top: 20vh;
+  position: absolute;
+  bottom: 0;
+  right: 0;
   z-index: 10;
-  margin-left: 90%;
+  margin-left: 50%;
+  height: 3em;
+  width: 7em;
+  background-color: #222;
+  border-radius: 5px;
+  color: white;
+  border: none;
 }
