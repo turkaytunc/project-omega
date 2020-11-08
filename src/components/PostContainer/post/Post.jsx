@@ -14,14 +14,10 @@ export const Post = ({ post }) => {
   useEffect(() => {
     if (search.length > 1) {
       console.log('3ten fazla');
-      const filterSearch = post.posts.filter((e) => e.id === parseInt(search));
+      const filterSearch = post.posts.filter((e) => e.title.includes(search));
       setFilteredSearch(filterSearch);
     }
   }, [search]);
-
-  useEffect(() => {
-    console.log(filteredSearch);
-  }, [filteredSearch]);
 
   return (
     <div className="post-container">
