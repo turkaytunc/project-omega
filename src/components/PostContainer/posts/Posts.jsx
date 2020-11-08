@@ -11,7 +11,7 @@ export const Posts = () => {
   const { postState, updatePostState } = useContext(PostState);
 
   // Local states
-  const [search, setSearch] = useState('');
+
   const [posts, setPosts] = useState([]);
 
   // Check if post is already in local state
@@ -43,23 +43,8 @@ export const Posts = () => {
     populatePosts(state);
   };
 
-  const handleInput = (e) => {
-    setSearch(e.target.value);
-
-    if (e.target.value.length >= 4) {
-      console.log('3 ten fazla');
-    }
-  };
-
   return (
     <div className="posts-container">
-      <input
-        className="search-box"
-        type="search"
-        value={search}
-        placeholder="Search"
-        onChange={(e) => handleInput(e)}
-      />
       {posts.map((e, i) => (
         <Post key={i} post={e} />
       ))}

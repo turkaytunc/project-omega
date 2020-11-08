@@ -12,9 +12,9 @@ export const SinglePost = ({ post }) => {
       onMouseEnter={() => setIsMouseOver(true)}
       onMouseLeave={() => setIsMouseOver(false)}
     >
-      <li>{post.title}</li>
-      <li>{post.body}</li>
-      {isMouseOver ? <HoverMenu postId={post.id} /> : null}
+      <li className="single-post-title">{post.title}</li>
+      <li className="single-post-body">{post.body}</li>
+      {isMouseOver ? <HoverMenu post={post} /> : null}
     </ul>
   );
 };
