@@ -44,6 +44,17 @@ export const Posts = () => {
     populatePosts(state);
   }, [state, postState, populatePosts]);
 
+  // Remove post from state
+  useEffect(() => {
+    if (posts.map((e) => e.posts)[0]) {
+      const filtered = posts
+        .map((e) => e.posts)[0]
+        .filter((e) => !removePostContext.includes(e.id));
+      setPosts([{ id: state, posts: filtered }]);
+    }
+  }, [removePostContext]);
+
+  // Remove posts from server
   const handleRemove = () => {
     removePostByPostIds(removePostContext)
       .then((e) => console.log(`removed post by ids: ${removePostContext}`))
@@ -54,7 +65,7 @@ export const Posts = () => {
   return (
     <div className="posts-container">
       {posts.map((e, i) => (
-        <Post key={i} post={e} />
+        <Post key={i} post={e} setPosts={setPosts} />
       ))}
       <button className="save-button" onClick={() => handleRemove()}>
         Save

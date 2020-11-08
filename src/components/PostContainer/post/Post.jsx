@@ -3,7 +3,7 @@ import './post.scss';
 import { SinglePost } from '../single-post/SinglePost';
 import { useEffect, useState } from 'react';
 
-export const Post = ({ post }) => {
+export const Post = ({ post, setPosts }) => {
   const [search, setSearch] = useState('');
   const [filteredSearch, setFilteredSearch] = useState();
 
@@ -13,7 +13,9 @@ export const Post = ({ post }) => {
 
   useEffect(() => {
     if (search.length > 1) {
-      const filterSearch = post.posts.filter((e) => e.title.includes(search));
+      const filterSearch = post.posts.filter((e) =>
+        e.title.includes(search.toLocaleLowerCase())
+      );
       setFilteredSearch(filterSearch);
     }
   }, [search]);
