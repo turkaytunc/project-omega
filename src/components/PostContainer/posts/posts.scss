@@ -1,18 +1,21 @@
-$search-box-outline: rgb(137, 209, 219);
+$search-box-outline: rgb(105, 201, 214);
 
 .posts-container {
   grid-column: 4/13;
-  margin: 1em;
+  padding: 1em;
   display: flex;
   flex-direction: column;
   padding-bottom: 1em;
   font-size: 0.8em;
+  background-color: #333;
 }
 
 .search-box {
+  margin-left: 1em;
   height: 2em;
-  border: 1px solid #ccc;
+  border: none;
   border-radius: 5px;
+  border-width: 0;
   padding-left: 0.5em;
   &:focus {
     outline-color: $search-box-outline;

@@ -1,8 +1,10 @@
+$post-bg-color: rgb(187, 106, 53);
+
 .post-ul {
   position: relative;
   list-style: none;
   margin-bottom: 1em;
-  background-color: cadetblue;
+  background-color: $post-bg-color;
   padding: 2em 0.2em;
 
   border-radius: 10px;

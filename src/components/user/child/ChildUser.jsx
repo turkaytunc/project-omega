@@ -7,7 +7,7 @@ export const ChildUser = ({ parentId, userName }) => {
 
   //Initial api call
   useEffect(() => {
-    updateState(1);
+    updateState(parentId);
   }, []);
 
   return (
