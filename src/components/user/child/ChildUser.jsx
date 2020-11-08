@@ -5,11 +5,9 @@ import { GlobalState } from '../../../context/GlobalContext';
 export const ChildUser = ({ parentId, userName }) => {
   const { updateState } = useContext(GlobalState);
 
+  //Initial api call
   useEffect(() => {
     updateState(1);
-    updateState(2);
-    updateState(3);
-    updateState(4);
   }, []);
 
   return (

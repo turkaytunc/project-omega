@@ -34,7 +34,7 @@ export const Posts = () => {
     [postState, hasPostInPostState, updatePostState]
   );
 
-  // Initial api call
+  // Handle rendering
   useEffect(() => {
     populatePosts(state);
   }, [state, postState, populatePosts]);
@@ -45,11 +45,14 @@ export const Posts = () => {
 
   const handleInput = (e) => {
     setSearch(e.target.value);
+
+    if (e.target.value.length >= 4) {
+      console.log('3 ten fazla');
+    }
   };
 
   return (
     <div className="posts-container">
-      <button onClick={() => handlePopulate()}>Get Posts</button>
       <input
         className="search-box"
         type="search"
@@ -60,6 +63,9 @@ export const Posts = () => {
       {posts.map((e, i) => (
         <Post key={i} post={e} />
       ))}
+      <button className="save-button" onClick={() => handlePopulate()}>
+        Save
+      </button>
     </div>
   );
 };

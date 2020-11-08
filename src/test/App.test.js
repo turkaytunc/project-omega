@@ -5,7 +5,7 @@ test('renders without crash', () => {
   render(<App />);
 });
 
-test('renders Leanne link', () => {
+test('renders save button', () => {
   const { container } = render(<App />);
-  expect(container.textContent).toMatch(/Get Posts/gi);
+  expect(container.textContent).toMatch(/Save/gi);
 });
