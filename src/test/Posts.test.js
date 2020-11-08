@@ -27,16 +27,4 @@ describe('Component rendering tests', () => {
 
     fireEvent.click(getByRole('button'));
   });
-
-  test('should fire onchange event', () => {
-    const { getByRole } = render(
-      <GlobalStateProvider value={null}>
-        <PostStateProvider>
-          <Posts />
-        </PostStateProvider>
-      </GlobalStateProvider>
-    );
-
-    fireEvent.input(getByRole('searchbox'), { target: { value: '23' } });
-  });
 });

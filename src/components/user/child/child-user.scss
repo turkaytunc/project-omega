@@ -1,6 +1,6 @@
-$hover-color: rgb(56, 173, 194);
-$focus-bg-color: rgb(44, 166, 170);
-$child-bg-color: rgb(29, 110, 124);
+$hover-color: rgb(196, 104, 51);
+$focus-bg-color: rgb(170, 90, 44);
+$child-bg-color: rgb(48, 76, 167);
 
 .child-user-container {
   background-color: $child-bg-color;
@@ -13,6 +13,7 @@ $child-bg-color: rgb(29, 110, 124);
   padding-left: 0.5em;
   font-size: 0.8em;
   min-height: 3em;
+  font-family: 'Roboto';
 
   &:focus {
     border-width: 0;

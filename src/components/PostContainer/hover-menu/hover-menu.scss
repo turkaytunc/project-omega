@@ -1,11 +1,11 @@
 .hover-menu-container {
   position: absolute;
-
   right: 0;
-  bottom: 0em;
+  bottom: 0.1em;
   height: 1.5em;
   width: fit-content;
   z-index: 1;
+  font-family: 'Big Shoulders Stencil Text';
 
   ul {
     display: flex;

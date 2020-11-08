@@ -1,10 +1,28 @@
+$post-bg-color: rgb(187, 106, 53);
+
 .post-ul {
   position: relative;
   list-style: none;
   margin-bottom: 1em;
-  background-color: cadetblue;
-  padding: 2em 0.2em;
+  background-color: $post-bg-color;
+  padding: 2em 0.7em;
 
-  border-radius: 10px;
-  font-size: 1.2em;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+.single-post-title {
+  text-transform: uppercase;
+  font-size: 1em;
+  padding-bottom: 1em;
+  &::first-letter {
+    font-size: 2em;
+  }
+}
+.single-post-body {
+  font-size: 0.9em;
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
 }

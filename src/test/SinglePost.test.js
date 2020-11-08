@@ -3,7 +3,7 @@ import { SinglePost } from '../components/PostContainer/single-post/SinglePost';
 
 const mockPost = {
   id: 1,
-  title: 'Mock title',
+  title: 'MOCK TITLE',
   body: 'This is a test string!',
 };
 
@@ -12,9 +12,9 @@ describe('Render react component', () => {
     render(<SinglePost post={mockPost} />);
   });
 
-  it('should render Mock title', () => {
+  it('should render MOCK TITLE', () => {
     render(<SinglePost post={mockPost} />);
-    expect(screen.getByText(/Mock title/)).toBeInTheDocument();
+    expect(screen.getByText(/Mock title/i)).toBeInTheDocument();
   });
 
   it('should render This is a test string!', () => {
