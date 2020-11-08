@@ -1,4 +1,5 @@
 $hover-color: rgb(56, 173, 194);
+$focus-bg-color: rgb(44, 166, 170);
 $child-bg-color: rgb(29, 110, 124);
 
 .child-user-container {
@@ -9,11 +10,26 @@ $child-bg-color: rgb(29, 110, 124);
   margin: 0.2em;
   width: 100%;
   border-radius: 10px;
-  padding-left: 1em;
+  padding-left: 0.5em;
+  font-size: 0.8em;
+  min-height: 3em;
 
+  &:focus {
+    border-width: 0;
+    outline: none;
+    background-color: $focus-bg-color;
+  }
   &:hover {
     background-color: $hover-color;
     color: #222;
     cursor: pointer;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .child-user-container {
+    padding-left: 0.5em;
+    font-size: 1em;
+    min-height: 2.5em;
   }
 }
