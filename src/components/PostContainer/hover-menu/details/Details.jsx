@@ -5,12 +5,9 @@ import { ModalStateContext } from '../../../../context/ModalStateContext';
 
 export const Details = ({ post }) => {
   const { updateModalContext } = useContext(ModalContext);
-  const { modalStateContext, updateModalStateContext } = useContext(
-    ModalStateContext
-  );
+  const { updateModalStateContext } = useContext(ModalStateContext);
 
   const handleClick = () => {
-    console.log(`Clicked details, id: ${post.id}`);
     updateModalContext(true);
     updateModalStateContext(post);
   };

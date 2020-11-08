@@ -1,6 +1,6 @@
 import { render, fireEvent } from '@testing-library/react';
-import { ChildUser } from '../components/user/child/ChildUser';
 import React from 'react';
+import { ChildUser } from '../components/user/child/ChildUser';
 
 import { GlobalStateProvider } from '../context/GlobalContext';
 
