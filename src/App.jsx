@@ -5,7 +5,7 @@ import { GlobalStateProvider } from './context/GlobalContext';
 import { ModalContextProvider } from './context/ModalContext';
 import { PostStateProvider } from './context/PostContext';
 import { RemovePostContextProvider } from './context/RemovePostContext';
-import { Modal } from './components/PostContainer/hover-menu/modal/Modal';
+import { DetailsModal } from './components/PostContainer/hover-menu/details-modal/DetailsModal';
 import { ModalStateContextProvider } from './context/ModalStateContext';
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
               <div className="app">
                 <UserMenuContainer />
                 <Posts />
-                <Modal></Modal>
+                <DetailsModal></DetailsModal>
               </div>
             </ModalStateContextProvider>
           </ModalContextProvider>

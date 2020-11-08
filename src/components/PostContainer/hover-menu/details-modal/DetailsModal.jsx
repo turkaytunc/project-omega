@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
-import './modal.scss';
+import './details-modal.scss';
 import { ModalContext } from '../../../../context/ModalContext';
 import { ModalStateContext } from '../../../../context/ModalStateContext';
 
-export const Modal = ({ children }) => {
+export const DetailsModal = ({ children }) => {
   const { modalContext, updateModalContext } = useContext(ModalContext);
   const { modalStateContext, updateModalStateContext } = useContext(
     ModalStateContext
@@ -20,8 +20,8 @@ export const Modal = ({ children }) => {
       {children}
       <div className="modal-container">
         <ul>
-          <li>{modalStateContext.title}</li>
-          <li>{modalStateContext.id}</li>
+          <li className="details-modal-header">Post Details</li>
+          <li class="modal-title">{modalStateContext.title}</li>
           <li>{modalStateContext.body}</li>
           <button className="close-button" onClick={() => handleDetails()}>
             Close

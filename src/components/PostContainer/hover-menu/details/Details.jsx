@@ -1,5 +1,5 @@
 import './details.scss';
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { ModalContext } from '../../../../context/ModalContext';
 import { ModalStateContext } from '../../../../context/ModalStateContext';
 
