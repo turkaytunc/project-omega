@@ -1,9 +1,14 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import './child-user.scss';
 import { GlobalState } from '../../../context/GlobalContext';
 
 export const ChildUser = ({ parentId, userName }) => {
   const { updateState } = useContext(GlobalState);
+
+  //Initial api call
+  useEffect(() => {
+    updateState(1);
+  }, []);
 
   return (
     <button
