@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/project-omega/static/css/main.4d9d4cb3.chunk.css",
+    "main.js": "/project-omega/static/js/main.66841211.chunk.js",
+    "main.js.map": "/project-omega/static/js/main.66841211.chunk.js.map",
+    "runtime-main.js": "/project-omega/static/js/runtime-main.295cd11c.js",
+    "runtime-main.js.map": "/project-omega/static/js/runtime-main.295cd11c.js.map",
+    "static/js/2.1d621439.chunk.js": "/project-omega/static/js/2.1d621439.chunk.js",
+    "static/js/2.1d621439.chunk.js.map": "/project-omega/static/js/2.1d621439.chunk.js.map",
+    "index.html": "/project-omega/index.html",
+    "static/css/main.4d9d4cb3.chunk.css.map": "/project-omega/static/css/main.4d9d4cb3.chunk.css.map",
+    "static/js/2.1d621439.chunk.js.LICENSE.txt": "/project-omega/static/js/2.1d621439.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.295cd11c.js",
+    "static/js/2.1d621439.chunk.js",
+    "static/css/main.4d9d4cb3.chunk.css",
+    "static/js/main.66841211.chunk.js"
+  ]
+}
