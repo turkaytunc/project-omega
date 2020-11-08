@@ -1,37 +1,47 @@
 import './posts.scss';
 import { Post } from '../post/Post';
 import { getPostByUserId } from '../../../http/getPostByUserId';
-import { useState, useEffect, useContext } from 'react';
+import { useState, useEffect, useContext, useCallback } from 'react';
 import { GlobalState } from '../../../context/GlobalContext';
 import { PostState } from '../../../context/PostContext';
 
 export const Posts = () => {
+  // Global states
   const { state } = useContext(GlobalState);
   const { postState, updatePostState } = useContext(PostState);
 
+  // Local states
   const [search, setSearch] = useState('');
   const [posts, setPosts] = useState([]);
 
-  const hasPostInPostState = (idToFind) =>
-    postState.some((e) => e.id === idToFind);
+  // Check if post is already in local state
+  const hasPostInPostState = useCallback(
+    (idToFind) => postState.some((e) => e.id === idToFind),
+    [postState]
+  );
 
-  const populatePosts = (givenId) => {
-    if (hasPostInPostState(givenId)) {
-      setPosts(postState.filter((e) => e.id === givenId));
-    } else {
-      getPostByUserId(givenId).then((e) =>
-        updatePostState([...postState, { id: e[0].userId, posts: [...e] }])
-      );
-    }
-  };
+  // Get posts
+  const populatePosts = useCallback(
+    (givenId) => {
+      if (hasPostInPostState(givenId)) {
+        setPosts(postState.filter((e) => e.id === givenId));
+      } else {
+        getPostByUserId(givenId).then((e) =>
+          updatePostState([...postState, { id: e[0].userId, posts: [...e] }])
+        );
+      }
+    },
+    [postState, hasPostInPostState, updatePostState]
+  );
+
+  // Initial api call
+  useEffect(() => {
+    populatePosts(state);
+  }, [state, postState, populatePosts]);
 
   const handlePopulate = () => {
     populatePosts(state);
   };
-
-  useEffect(() => {
-    populatePosts(state);
-  }, [state]);
 
   const handleInput = (e) => {
     setSearch(e.target.value);
