@@ -5,7 +5,13 @@ import React from 'react';
 import { GlobalStateProvider } from '../context/GlobalContext';
 import { PostStateProvider } from '../context/PostContext';
 
-const post = { id: 0, posts: [{ id: 0, body: 'this is post body' }] };
+const post = {
+  id: 0,
+  posts: [
+    { id: 0, body: 'this is post body' },
+    { id: 1, body: 'this is post body' },
+  ],
+};
 
 describe('Handles single post container', () => {
   test('should render without crash', () => {
@@ -22,5 +28,5 @@ test('should fire onchange event', () => {
     </GlobalStateProvider>
   );
 
-  fireEvent.input(getByRole('searchbox'), { target: { value: '23' } });
+  fireEvent.input(getByRole('searchbox'), { target: { value: '31' } });
 });

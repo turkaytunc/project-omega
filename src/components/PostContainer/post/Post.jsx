@@ -33,7 +33,9 @@ export const Post = ({ post }) => {
         onChange={(e) => handleInput(e)}
       />
       {search.length > 1
-        ? filteredSearch.map((e) => <SinglePost key={e.id} post={e} />)
+        ? filteredSearch
+          ? filteredSearch.map((e) => <SinglePost key={e.id} post={e} />)
+          : null
         : post.posts.map((e) => <SinglePost key={e.id} post={e} />)}
     </div>
   );
