@@ -12,6 +12,7 @@ $search-box-outline: rgb(105, 201, 214);
   border-width: 0;
   padding-left: 0.5em;
   width: 100%;
+  margin-bottom: 1em;
   &:focus {
     outline-color: $search-box-outline;
   }

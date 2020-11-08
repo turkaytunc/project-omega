@@ -8,8 +8,8 @@ import { PostStateProvider } from '../context/PostContext';
 const post = {
   id: 0,
   posts: [
-    { id: 0, body: 'this is post body' },
-    { id: 1, body: 'this is post body' },
+    { id: 0, body: 'this is post body', title: 'this is a title' },
+    { id: 1, body: 'this is post body', title: 'this is a title' },
   ],
 };
 
