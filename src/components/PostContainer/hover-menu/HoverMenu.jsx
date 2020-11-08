@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Details } from './details/Details';
 import './hover-menu.scss';
 import { Remove } from './remove/Remove';

@@ -12,7 +12,7 @@ export const Post = ({ post, setPosts }) => {
   };
 
   useEffect(() => {
-    if (search.length > 1) {
+    if (search.length > 2) {
       const filterSearch = post.posts.filter((e) =>
         e.title.includes(search.toLocaleLowerCase())
       );
@@ -29,7 +29,7 @@ export const Post = ({ post, setPosts }) => {
         placeholder="Search"
         onChange={(e) => handleInput(e)}
       />
-      {search.length > 1
+      {search.length > 2
         ? filteredSearch
           ? filteredSearch.map((e) => <SinglePost key={e.id} post={e} />)
           : null

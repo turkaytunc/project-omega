@@ -1,0 +1,20 @@
+.modal {
+  z-index: 10;
+  height: 2000px;
+  width: 100%;
+  min-height: auto;
+  background-color: rgba(29, 27, 27, 0.5);
+  position: absolute;
+}
+
+.modal-container {
+  display: flex;
+
+  ul {
+    background-color: orangered;
+    margin: 0em 5em;
+    padding: 5em 1em;
+    border-radius: 1em;
+    min-width: 50vw;
+  }
+}
